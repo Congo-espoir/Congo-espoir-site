@@ -55,7 +55,7 @@ function StepIndicator({ current }: { current: number }) {
               current > step.id
                 ? 'bg-success-500 text-white'
                 : current === step.id
-                ? 'bg-gray-700 text-white ring-4 ring-gray-200'
+                ? 'bg-gray-800 text-white ring-4 ring-gray-200'
                 : 'bg-gray-100 text-gray-400'
             }`}>
               {current > step.id ? <CheckCircle size={18} /> : <step.icon size={18} />}

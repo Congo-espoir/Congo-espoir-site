@@ -7,20 +7,16 @@ import secretaryWithPresidentImage from '../medias/SG_et_president.jpeg'
 
 function PageHero() {
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden bg-gray-900">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+    <section className="relative pt-24 pb-16 overflow-hidden bg-gray-50 border-b border-gray-100">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-gold-500/20 text-gold-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+        <div className="inline-flex items-center gap-2 bg-gold-100 text-gold-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
           <Star size={12} fill="currentColor" />
           Notre identité politique
         </div>
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
           Nos valeurs et notre identité
         </h1>
-        <p className="text-white/70 text-xl max-w-2xl mx-auto">
+        <p className="text-gray-500 text-xl max-w-2xl mx-auto">
           Congo Espoir porte une vision sociale-démocrate fondée sur la justice, le patriotisme
           et l'engagement social au service de la République Démocratique du Congo.
         </p>
@@ -53,32 +49,32 @@ function PresentationSection() {
             </p>
           </div>
 
-          <div className="bg-gray-900 rounded-2xl p-8 text-white">
-            <h3 className="font-serif text-2xl font-bold mb-6 text-gold-400">Notre Mission</h3>
-            <p className="text-white/80 text-base leading-relaxed mb-6">
+          <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+            <h3 className="font-serif text-2xl font-bold mb-6 text-gold-600">Notre Mission</h3>
+            <p className="text-gray-600 text-base leading-relaxed mb-6">
               Construire une République Démocratique du Congo unie, prospère, juste, moderne et démocratique.
             </p>
 
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <CheckCircle size={18} className="text-gold-400 mt-0.5 shrink-0" />
-                <p className="text-white/70 text-sm">Respecter la Constitution, les lois de la RDC et les bonnes mœurs</p>
+                <CheckCircle size={18} className="text-gold-500 mt-0.5 shrink-0" />
+                <p className="text-gray-600 text-sm">Respecter la Constitution, les lois de la RDC et les bonnes mœurs</p>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle size={18} className="text-gold-400 mt-0.5 shrink-0" />
-                <p className="text-white/70 text-sm">Œuvrer pour la préservation de l'unité nationale et de la souveraineté de l'État</p>
+                <CheckCircle size={18} className="text-gold-500 mt-0.5 shrink-0" />
+                <p className="text-gray-600 text-sm">Œuvrer pour la préservation de l'unité nationale et de la souveraineté de l'État</p>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle size={18} className="text-gold-400 mt-0.5 shrink-0" />
-                <p className="text-white/70 text-sm">Promouvoir la démocratie, les valeurs et les droits humains ainsi que les libertés fondamentales</p>
+                <CheckCircle size={18} className="text-gold-500 mt-0.5 shrink-0" />
+                <p className="text-gray-600 text-sm">Promouvoir la démocratie, les valeurs et les droits humains ainsi que les libertés fondamentales</p>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle size={18} className="text-gold-400 mt-0.5 shrink-0" />
-                <p className="text-white/70 text-sm">Lutter contre toute forme de violence visant l'accès ou le maintien au pouvoir</p>
+                <CheckCircle size={18} className="text-gold-500 mt-0.5 shrink-0" />
+                <p className="text-gray-600 text-sm">Lutter contre toute forme de violence visant l'accès ou le maintien au pouvoir</p>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle size={18} className="text-gold-400 mt-0.5 shrink-0" />
-                <p className="text-white/70 text-sm">Veiller à la protection du bien commun, à la justice sociale et à la soumission de tous à la loi</p>
+                <CheckCircle size={18} className="text-gold-500 mt-0.5 shrink-0" />
+                <p className="text-gray-600 text-sm">Veiller à la protection du bien commun, à la justice sociale et à la soumission de tous à la loi</p>
               </div>
             </div>
           </div>
@@ -279,20 +275,20 @@ function StructureSection() {
   const structures = [
     {
       category: 'Organes Nationaux',
-      color: 'border-gray-500',
-      headerColor: 'bg-gray-800',
+      color: 'border-gray-300',
+      headerColor: 'bg-gray-100 text-gray-800',
       items: ['Le Congrès', 'Le Collège des Fondateurs', 'Le Bureau Politique', 'Le Directoire National'],
     },
     {
       category: 'Organes de Base',
-      color: 'border-gold-500',
-      headerColor: 'bg-gold-600',
+      color: 'border-gold-300',
+      headerColor: 'bg-gold-50 text-gold-800',
       items: ['Les Fédérations'],
     },
     {
       category: 'Structures Spécialisées',
-      color: 'border-danger-500',
-      headerColor: 'bg-gray-700',
+      color: 'border-red-300',
+      headerColor: 'bg-gray-100 text-gray-800',
       items: ['La Ligue des Femmes', 'La Ligue des Jeunes', 'La Ligue des Personnes Vivant avec Handicap', 'Le Club de Penseurs', "L'École du Parti"],
     },
   ]
@@ -319,7 +315,7 @@ function StructureSection() {
             <div className="space-y-4">
               {structures.map(s => (
                 <div key={s.category} className={`rounded-xl overflow-hidden border-l-4 ${s.color} bg-white shadow-sm`}>
-                  <div className={`${s.headerColor} text-white font-semibold text-sm px-5 py-3`}>{s.category}</div>
+                  <div className={`${s.headerColor} font-semibold text-sm px-5 py-3`}>{s.category}</div>
                   <ul className="px-5 py-3 space-y-1.5">
                     {s.items.map(item => (
                       <li key={item} className="flex items-center gap-2 text-gray-700 text-sm">
@@ -344,7 +340,7 @@ function StructureSection() {
               <div className="space-y-2">
                 {memberCategories.map(m => (
                   <div key={m.num} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:border-gray-200 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-gray-800 text-white text-sm font-bold flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-gray-100 text-gray-700 text-sm font-bold flex items-center justify-center shrink-0">
                       {m.num}
                     </div>
                     <span className="text-gray-800 font-medium text-sm">{m.label}</span>
@@ -353,12 +349,12 @@ function StructureSection() {
               </div>
             </div>
 
-            <div className="bg-gray-900 rounded-2xl p-6 text-white">
-              <h3 className="font-serif text-xl font-bold mb-4 text-gold-400">Sources de Financement</h3>
+            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <h3 className="font-serif text-xl font-bold mb-4 text-gold-600">Sources de Financement</h3>
               <div className="grid grid-cols-2 gap-3">
                 {['Cotisations', 'Subventions', 'Legs', 'Dons', 'Revenus propres'].map(source => (
-                  <div key={source} className="flex items-center gap-2 text-white/70 text-sm">
-                    <CheckCircle size={14} className="text-gold-400 shrink-0" />
+                  <div key={source} className="flex items-center gap-2 text-gray-600 text-sm">
+                    <CheckCircle size={14} className="text-gold-500 shrink-0" />
                     {source}
                   </div>
                 ))}
@@ -391,7 +387,7 @@ function JoinConditions() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
           {conditions.map((c, i) => (
             <div key={i} className="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-100">
-              <div className="w-6 h-6 rounded-full bg-gray-800 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-6 h-6 rounded-full bg-gray-100 text-gray-700 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                 {i + 1}
               </div>
               <p className="text-gray-700 text-sm leading-relaxed">{c}</p>

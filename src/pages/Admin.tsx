@@ -240,10 +240,10 @@ export default function Admin() {
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Header */}
-      <div className="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white border-b border-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="font-serif text-3xl font-bold text-white mb-1">Administration</h1>
-          <p className="text-white/60">Gestion des demandes d'adhésion au parti Congo Espoir</p>
+          <h1 className="font-serif text-3xl font-bold text-gray-900 mb-1">Administration</h1>
+          <p className="text-gray-500">Gestion des demandes d'adhésion au parti Congo Espoir</p>
         </div>
       </div>
 

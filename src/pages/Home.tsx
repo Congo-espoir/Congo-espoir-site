@@ -78,9 +78,9 @@ function NewsCarousel({ articles }: { articles: Article[] }) {
     evenement: 'Événement',
   }
   const categoryColors: Record<string, string> = {
-    actualite: 'bg-gray-800',
+    actualite: 'bg-gray-600',
     communique: 'bg-gold-500',
-    evenement: 'bg-red-600',
+    evenement: 'bg-red-500',
   }
 
   return (

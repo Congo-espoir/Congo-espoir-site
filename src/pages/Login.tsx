@@ -60,27 +60,27 @@ export default function Login() {
   return (
     <div className="min-h-screen flex">
       {/* Left panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gray-900 flex-col justify-between p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gray-50 flex-col justify-between p-12 relative overflow-hidden border-r border-gray-100">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold-500" />
-          <div className="absolute -bottom-10 -left-10 w-60 h-60 rounded-full bg-danger-500" />
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold-400" />
+          <div className="absolute -bottom-10 -left-10 w-60 h-60 rounded-full bg-red-400" />
         </div>
 
         <Link to="/" className="flex items-center gap-3 relative z-10">
-          <Logo size="md" variant="white" />
+          <Logo size="md" variant="color" />
           <div>
-            <div className="text-white font-bold text-xl">CONGO ESPOIR</div>
-            <div className="text-gold-400 text-xs tracking-widest uppercase">Justice · Patriotisme · Social</div>
+            <div className="text-gray-900 font-bold text-xl">CONGO ESPOIR</div>
+            <div className="text-gold-600 text-xs tracking-widest uppercase">Justice · Patriotisme · Social</div>
           </div>
         </Link>
 
         <div className="relative z-10">
-          <blockquote className="text-white/80 text-xl leading-relaxed italic mb-6">
+          <blockquote className="text-gray-600 text-xl leading-relaxed italic mb-6">
             "L'adhésion au Congo Espoir, c'est choisir de bâtir un avenir meilleur pour notre République Démocratique du Congo."
           </blockquote>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-0.5 bg-gold-400" />
-            <p className="text-gold-400 text-sm font-semibold">Maître JOSE MPANDA KABANGU</p>
+            <div className="w-10 h-0.5 bg-gold-500" />
+            <p className="text-gold-600 text-sm font-semibold">Maître JOSE MPANDA KABANGU</p>
           </div>
         </div>
 
@@ -91,8 +91,8 @@ export default function Login() {
             { value: '50K+', label: 'Membres' },
           ].map(stat => (
             <div key={stat.label} className="text-center">
-              <div className="text-2xl font-bold font-serif text-gold-400">{stat.value}</div>
-              <div className="text-white/50 text-xs mt-0.5">{stat.label}</div>
+              <div className="text-2xl font-bold font-serif text-gold-500">{stat.value}</div>
+              <div className="text-gray-400 text-xs mt-0.5">{stat.label}</div>
             </div>
           ))}
         </div>
