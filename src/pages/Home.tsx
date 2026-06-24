@@ -78,27 +78,27 @@ function NewsCarousel({ articles }: { articles: Article[] }) {
     evenement: 'Événement',
   }
   const categoryColors: Record<string, string> = {
-    actualite: 'bg-primary-600',
+    actualite: 'bg-gray-800',
     communique: 'bg-gold-500',
-    evenement: 'bg-danger-600',
+    evenement: 'bg-red-600',
   }
 
   return (
-    <section className="bg-gray-50 py-16 md:py-20">
+    <section className="bg-white py-16 md:py-20 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-8">
           <div>
             <h2 className="section-title">Dernières Actualités</h2>
             <p className="section-subtitle mb-0">Restez informés des activités du parti</p>
           </div>
-          <Link to="/actualites" className="hidden md:flex items-center gap-2 text-primary-700 hover:text-primary-900 font-semibold text-sm transition-colors">
+          <Link to="/actualites" className="hidden md:flex items-center gap-2 text-gray-800 hover:text-gray-600 font-semibold text-sm transition-colors">
             Voir tout <ArrowRight size={16} />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Featured article */}
-          <div className="lg:col-span-3 relative rounded-2xl overflow-hidden shadow-xl group card-hover">
+          <div className="lg:col-span-3 relative rounded-2xl overflow-hidden shadow-lg group card-hover">
             <div className="aspect-[16/9] relative overflow-hidden">
               <img
                 src={article.image_url || fallbackNewsImage}
@@ -107,7 +107,7 @@ function NewsCarousel({ articles }: { articles: Article[] }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className={`inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-3 ${categoryColors[article.categorie] || 'bg-primary-600'}`}>
+                <span className={`inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-3 ${categoryColors[article.categorie] || 'bg-gray-800'}`}>
                   {categoryLabels[article.categorie] || article.categorie}
                 </span>
                 <h3 className="font-serif text-xl md:text-2xl font-bold text-white mb-2 line-clamp-2">
@@ -148,7 +148,7 @@ function NewsCarousel({ articles }: { articles: Article[] }) {
               <Link
                 key={a.id}
                 to={`/actualites/${a.id}`}
-                className={`flex gap-3 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-200 group ${i === current ? 'ring-2 ring-primary-500' : ''}`}
+                className={`flex gap-3 rounded-xl overflow-hidden bg-white border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200 group ${i === current ? 'ring-2 ring-gray-200' : ''}`}
               >
                 <div className="w-24 h-24 shrink-0 overflow-hidden">
                   <img
@@ -158,15 +158,15 @@ function NewsCarousel({ articles }: { articles: Article[] }) {
                   />
                 </div>
                 <div className="py-3 pr-3 flex flex-col justify-center">
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded-full text-white inline-block w-fit mb-1 ${categoryColors[a.categorie] || 'bg-primary-600'}`}>
+                  <span className={`text-xs font-bold px-2 py-0.5 rounded-full text-white inline-block w-fit mb-1 ${categoryColors[a.categorie] || 'bg-gray-800'}`}>
                     {categoryLabels[a.categorie] || a.categorie}
                   </span>
-                  <p className="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-primary-700 transition-colors">{a.titre}</p>
+                  <p className="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-gray-600 transition-colors">{a.titre}</p>
                   <p className="text-xs text-gray-500 mt-1">{displayDate(a, { day: 'numeric', month: 'long' })}</p>
                 </div>
               </Link>
             ))}
-            <Link to="/actualites" className="flex items-center justify-center gap-2 text-primary-700 border-2 border-primary-200 hover:border-primary-500 hover:bg-primary-50 font-semibold text-sm py-3 rounded-xl transition-all duration-200 mt-auto">
+            <Link to="/actualites" className="flex items-center justify-center gap-2 text-gray-800 border-2 border-gray-200 hover:border-gray-800 hover:bg-gray-800 hover:text-white font-semibold text-sm py-3 rounded-xl transition-all duration-200 mt-auto">
               Toutes les actualités <ArrowRight size={16} />
             </Link>
           </div>
@@ -178,18 +178,18 @@ function NewsCarousel({ articles }: { articles: Article[] }) {
 
 function LeaderSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={leaderImage}
                 alt="Fondateur du parti"
                 className="w-full aspect-[4/5] object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary-900 text-white rounded-2xl p-5 shadow-xl hidden lg:block">
+            <div className="absolute -bottom-6 -right-6 bg-gray-900 text-white rounded-2xl p-5 shadow-xl hidden lg:block">
               <div className="text-4xl font-bold font-serif text-gold-400">2005</div>
               <div className="text-sm text-white/70 mt-1">Année de fondation</div>
             </div>
@@ -215,7 +215,7 @@ function LeaderSection() {
             </div>
             <div className="mb-6">
               <p className="font-bold text-gray-900 text-lg">Maître JOSE MPANDA KABANGU</p>
-              <p className="text-primary-600 text-sm font-medium">Initiateur et Autorité Morale du Parti</p>
+              <p className="text-gray-500 text-sm font-medium">Initiateur et Autorité Morale du Parti</p>
             </div>
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-100">
               {[
@@ -224,7 +224,7 @@ function LeaderSection() {
                 { label: 'Fédérations', value: '150+' },
               ].map(stat => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold font-serif text-primary-800">{stat.value}</div>
+                  <div className="text-3xl font-bold font-serif text-gray-800">{stat.value}</div>
                   <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
                 </div>
               ))}
@@ -265,32 +265,32 @@ function ValuesTeaser() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-primary-950 to-primary-900">
+    <section className="py-16 md:py-24 bg-gray-50/50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-gold-400 text-xs font-bold uppercase tracking-widest mb-4">
-            <div className="w-8 h-px bg-gold-400" />
+          <div className="inline-flex items-center gap-2 text-gold-600 text-xs font-bold uppercase tracking-widest mb-4">
+            <div className="w-8 h-px bg-gold-500" />
             Ce en quoi nous croyons
-            <div className="w-8 h-px bg-gold-400" />
+            <div className="w-8 h-px bg-gold-500" />
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">Nos Valeurs Fondamentales</h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">Les principes qui guident chacune de nos actions au service du peuple congolais.</p>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-3">Nos Valeurs Fondamentales</h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">Les principes qui guident chacune de nos actions au service du peuple congolais.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {values.map(v => (
-            <div key={v.title} className="bg-white/5 hover:bg-white/10 rounded-2xl p-6 transition-all duration-300 group border border-white/10 hover:border-white/20">
+            <div key={v.title} className="bg-white rounded-2xl p-6 transition-all duration-300 group border border-gray-100 hover:border-gray-200 hover:shadow-lg">
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${v.color}`}>
                 <v.icon size={22} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">{v.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{v.desc}</p>
+              <h3 className="text-gray-900 font-bold text-lg mb-2">{v.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <Link to="/valeurs" className="inline-flex items-center gap-2 border-2 border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200">
+          <Link to="/valeurs" className="inline-flex items-center gap-2 border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200">
             Découvrir notre programme <ArrowRight size={16} />
           </Link>
         </div>
@@ -301,12 +301,12 @@ function ValuesTeaser() {
 
 function JoinCTA() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white border-t border-gray-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-          <div className="w-8 h-px bg-primary-400" />
+        <div className="inline-flex items-center gap-2 text-gold-600 text-xs font-bold uppercase tracking-widest mb-4">
+          <div className="w-8 h-px bg-gold-500" />
           Rejoignez le mouvement
-          <div className="w-8 h-px bg-primary-400" />
+          <div className="w-8 h-px bg-gold-500" />
         </div>
         <h2 className="section-title mb-4">Devenez Membre de Congo Espoir</h2>
         <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
@@ -314,11 +314,11 @@ function JoinCTA() {
           Rejoignez des milliers de Congolais qui croient en un avenir meilleur.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/adhesion" className="btn-primary text-base px-10 py-4">
+          <Link to="/adhesion" className="btn-gold text-base px-10 py-4">
             <Users size={18} />
             Adhérer maintenant
           </Link>
-          <Link to="/valeurs" className="btn-primary bg-white text-primary-800 border-2 border-primary-200 hover:border-primary-400 hover:shadow-md text-base px-10 py-4">
+          <Link to="/valeurs" className="btn-outline-dark text-base px-10 py-4">
             <BookOpen size={18} />
             Notre programme
           </Link>
@@ -332,7 +332,7 @@ function JoinCTA() {
             { label: 'Partager nos valeurs', icon: Heart },
           ].map(c => (
             <div key={c.label} className="flex flex-col items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center">
                 <c.icon size={18} />
               </div>
               <p className="text-sm text-gray-600 font-medium">{c.label}</p>

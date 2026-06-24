@@ -37,10 +37,10 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isTransparent ? 'bg-transparent' : 'bg-primary-900 shadow-lg'
+      isTransparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
     }`}>
-      {/* Top stripe */}
-      <div className="party-stripe h-1" />
+      {/* Top stripe - gold accent instead of party colors */}
+      <div className="h-1 bg-gold-500" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -48,8 +48,10 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-3 group">
             <Logo size="sm" variant="white" />
             <div>
-              <div className="text-white font-bold text-lg leading-tight tracking-wide">CONGO ESPOIR</div>
-              <div className="text-gold-400 text-xs font-medium tracking-widest uppercase">Justice · Patriotisme · Social</div>
+              <div className={`font-bold text-lg leading-tight tracking-wide transition-colors duration-300 ${
+                isTransparent ? 'text-white' : 'text-gray-900'
+              }`}>CONGO ESPOIR</div>
+              <div className="text-gold-500 text-xs font-medium tracking-widest uppercase">Justice · Patriotisme · Social</div>
             </div>
           </Link>
 
@@ -61,8 +63,10 @@ export default function Navbar() {
                 to={link.to}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   location.pathname === link.to
-                    ? 'bg-white/20 text-white'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                    ? isTransparent ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-900'
+                    : isTransparent
+                      ? 'text-white/80 hover:text-white hover:bg-white/10'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
                 {link.label}
@@ -85,7 +89,11 @@ export default function Navbar() {
                 )}
                 <button
                   onClick={handleSignOut}
-                  className="flex items-center gap-1.5 text-white/80 hover:text-white hover:bg-white/10 text-sm px-3 py-2 rounded-lg transition-all duration-200"
+                  className={`flex items-center gap-1.5 text-sm px-3 py-2 rounded-lg transition-all duration-200 ${
+                    isTransparent
+                      ? 'text-white/80 hover:text-white hover:bg-white/10'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
                 >
                   <LogOut size={14} />
                   Déconnexion
@@ -94,7 +102,11 @@ export default function Navbar() {
             ) : (
               <Link
                 to="/connexion"
-                className="flex items-center gap-1.5 border border-white/40 hover:border-white text-white text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200"
+                className={`flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200 ${
+                  isTransparent
+                    ? 'border border-white/40 hover:border-white text-white'
+                    : 'border border-gray-300 hover:border-gray-900 text-gray-800 hover:bg-gray-900 hover:text-white'
+                }`}
               >
                 <LogIn size={14} />
                 Connexion
@@ -104,7 +116,9 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isTransparent ? 'text-white hover:bg-white/10' : 'text-gray-800 hover:bg-gray-100'
+            }`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >
@@ -115,21 +129,21 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-primary-900 border-t border-white/10 px-4 pb-4 pt-2">
+        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2 shadow-lg">
           {links.map(link => (
             <Link
               key={link.to}
               to={link.to}
               className={`block px-4 py-3 rounded-lg text-sm font-medium mb-1 transition-all duration-200 ${
                 location.pathname === link.to
-                  ? 'bg-white/20 text-white'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'
+                  ? 'bg-gray-100 text-gray-900'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="border-t border-white/10 mt-2 pt-2">
+          <div className="border-t border-gray-100 mt-2 pt-2">
             {user ? (
               <>
                 {isAdmin && (
@@ -143,7 +157,7 @@ export default function Navbar() {
                 )}
                 <button
                   onClick={handleSignOut}
-                  className="w-full flex items-center gap-2 text-white/80 text-sm px-4 py-3 rounded-lg hover:bg-white/10"
+                  className="w-full flex items-center gap-2 text-gray-600 text-sm px-4 py-3 rounded-lg hover:bg-gray-50"
                 >
                   <LogOut size={15} />
                   Déconnexion
@@ -152,7 +166,7 @@ export default function Navbar() {
             ) : (
               <Link
                 to="/connexion"
-                className="flex items-center gap-2 text-white text-sm font-medium px-4 py-3 rounded-lg border border-white/30"
+                className="flex items-center gap-2 text-gray-800 text-sm font-medium px-4 py-3 rounded-lg border border-gray-300"
               >
                 <LogIn size={15} />
                 Connexion

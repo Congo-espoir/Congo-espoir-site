@@ -12,15 +12,15 @@ const CATEGORIES = [
 ]
 
 const categoryColors: Record<string, string> = {
-  actualite: 'bg-primary-100 text-primary-700',
+  actualite: 'bg-gray-100 text-gray-700',
   communique: 'bg-gold-100 text-gold-700',
-  evenement: 'bg-danger-100 text-danger-700',
+  evenement: 'bg-red-100 text-red-700',
 }
 
 const categoryBadgeColors: Record<string, string> = {
-  actualite: 'bg-primary-600',
+  actualite: 'bg-gray-800',
   communique: 'bg-gold-500',
-  evenement: 'bg-danger-600',
+  evenement: 'bg-red-600',
 }
 
 const categoryLabels: Record<string, string> = {
@@ -143,14 +143,14 @@ export default function News() {
   return (
     <div>
       {/* Hero */}
-      <section className="pt-24 pb-10 bg-primary-900">
+      <section className="pt-24 pb-10 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-gold-500/20 text-gold-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-gold-100 text-gold-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             <Tag size={12} />
             Publications officielles
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-3">Actualités</h1>
-          <p className="text-white/70 text-lg">Toutes les nouvelles du parti, communiqués officiels et événements</p>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-3">Actualités</h1>
+          <p className="text-gray-500 text-lg">Toutes les nouvelles du parti, communiqués officiels et événements</p>
         </div>
       </section>
 
@@ -164,7 +164,7 @@ export default function News() {
               placeholder="Rechercher un article..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-gray-50"
+              className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-gray-50"
             />
           </div>
           {/* Category filter */}
@@ -175,7 +175,7 @@ export default function News() {
                 onClick={() => setCategory(cat.value)}
                 className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                   category === cat.value
-                    ? 'bg-primary-700 text-white shadow-sm'
+                    ? 'bg-gray-800 text-white shadow-sm'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
