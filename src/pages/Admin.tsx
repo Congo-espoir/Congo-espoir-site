@@ -82,7 +82,7 @@ function MemberRow({ profile, onAction, onViewDoc }: MemberRowProps) {
             {profile.document_path && (
               <button
                 onClick={() => onViewDoc(profile.document_path!, profile.document_nom || 'document')}
-                className="p-2 text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                className="p-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
                 title="Voir le document"
               >
                 <Eye size={16} />
@@ -137,7 +137,7 @@ function MemberRow({ profile, onAction, onViewDoc }: MemberRowProps) {
                   onChange={e => setNotes(e.target.value)}
                   rows={2}
                   placeholder="Ajouter des notes sur ce dossier..."
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 resize-none"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 resize-none"
                 />
               </div>
               <div className="flex flex-row lg:flex-col gap-2 shrink-0">
@@ -240,7 +240,7 @@ export default function Admin() {
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Header */}
-      <div className="bg-primary-900 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="font-serif text-3xl font-bold text-white mb-1">Administration</h1>
           <p className="text-white/60">Gestion des demandes d'adhésion au parti Congo Espoir</p>
@@ -250,7 +250,7 @@ export default function Admin() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <StatCard label="Total demandes" value={stats.total} icon={Users} color="bg-primary-100 text-primary-700" />
+          <StatCard label="Total demandes" value={stats.total} icon={Users} color="bg-gray-100 text-gray-700" />
           <StatCard label="En attente" value={stats.en_attente} icon={Clock} color="bg-gold-100 text-gold-700" />
           <StatCard label="Validées" value={stats.valide} icon={CheckCircle} color="bg-success-100 text-success-700" />
           <StatCard label="Refusées" value={stats.rejete} icon={XCircle} color="bg-danger-100 text-danger-700" />
@@ -274,14 +274,14 @@ export default function Admin() {
                 placeholder="Rechercher par nom ou email..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                className="w-full pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
             </div>
             <div className="flex gap-2">
               <select
                 value={statusFilter}
                 onChange={e => setStatusFilter(e.target.value as MemberStatus | '')}
-                className="px-4 py-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                className="px-4 py-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
                 <option value="">Tous les statuts</option>
                 <option value="en_attente">En attente</option>
@@ -300,7 +300,7 @@ export default function Admin() {
 
           {loading ? (
             <div className="flex items-center justify-center py-16">
-              <div className="animate-spin rounded-full h-10 w-10 border-4 border-primary-700 border-t-transparent" />
+              <div className="animate-spin rounded-full h-10 w-10 border-4 border-gray-700 border-t-transparent" />
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-16">
@@ -350,7 +350,7 @@ export default function Admin() {
                   href={docModal.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-primary-600 hover:text-primary-800 text-sm font-medium transition-colors"
+                  className="flex items-center gap-1.5 text-gray-600 hover:text-gray-800 text-sm font-medium transition-colors"
                 >
                   <ExternalLink size={14} />
                   Ouvrir
@@ -358,7 +358,7 @@ export default function Admin() {
                 <a
                   href={docModal.url}
                   download={docModal.nom}
-                  className="flex items-center gap-1.5 text-primary-600 hover:text-primary-800 text-sm font-medium transition-colors"
+                  className="flex items-center gap-1.5 text-gray-600 hover:text-gray-800 text-sm font-medium transition-colors"
                 >
                   <Download size={14} />
                   Télécharger

@@ -7,13 +7,13 @@ import secretaryWithPresidentImage from '../medias/SG_et_president.jpeg'
 
 function PageHero() {
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden bg-primary-900">
+    <section className="relative pt-24 pb-16 overflow-hidden bg-gray-900">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-25"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-gold-500/20 text-gold-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+        <div className="inline-flex items-center gap-2 bg-gold-500/20 text-gold-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
           <Star size={12} fill="currentColor" />
           Notre identité politique
         </div>
@@ -35,8 +35,8 @@ function PresentationSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-              <div className="w-8 h-px bg-primary-400" />
+            <div className="inline-flex items-center gap-2 text-gold-600 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="w-8 h-px bg-gold-500" />
               Présentation
             </div>
             <h2 className="section-title mb-4">Qui sommes-nous ?</h2>
@@ -47,13 +47,13 @@ function PresentationSection() {
               JOSE MPANDA KABANGU, Initiateur et Autorité morale du Parti.
             </p>
             <p className="text-gray-600 text-base leading-relaxed">
-              Notre devise — <strong className="text-primary-800">"Justice, Patriotisme, Social"</strong> — résume l'essence
+              Notre devise — <strong className="text-gray-800">"Justice, Patriotisme, Social"</strong> — résume l'essence
               de notre engagement envers le peuple congolais et notre vision d'une Nation
               unie, paisible, démocratique et tournée vers la prospérité partagée.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-900 to-primary-800 rounded-2xl p-8 text-white">
+          <div className="bg-gray-900 rounded-2xl p-8 text-white">
             <h3 className="font-serif text-2xl font-bold mb-6 text-gold-400">Notre Mission</h3>
             <p className="text-white/80 text-base leading-relaxed mb-6">
               Construire une République Démocratique du Congo unie, prospère, juste, moderne et démocratique.
@@ -92,7 +92,7 @@ function ObjectivesSection() {
   const objectives = [
     {
       icon: Shield,
-      color: 'bg-primary-100 text-primary-700',
+      color: 'bg-gray-100 text-gray-700',
       number: '01',
       title: 'Unité Nationale',
       description: 'Préserver l\'unité nationale, la paix sociale, l\'intégrité du Territoire National et la souveraineté de l\'État congolais.',
@@ -138,10 +138,10 @@ function ObjectivesSection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-            <div className="w-8 h-px bg-primary-400" />
+          <div className="inline-flex items-center gap-2 text-gray-600 text-xs font-bold uppercase tracking-widest mb-4">
+            <div className="w-8 h-px bg-gold-500" />
             Nos objectifs
-            <div className="w-8 h-px bg-primary-400" />
+            <div className="w-8 h-px bg-gold-500" />
           </div>
           <h2 className="section-title">Objectifs Généraux &amp; Spécifiques</h2>
           <p className="section-subtitle">Les priorités qui orientent notre action politique au quotidien</p>
@@ -149,14 +149,14 @@ function ObjectivesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {objectives.map(obj => (
-            <div key={obj.number} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100 hover:border-primary-200 card-hover">
+            <div key={obj.number} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100 hover:border-gray-200 card-hover">
               <div className="flex items-start justify-between mb-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${obj.color}`}>
                   <obj.icon size={22} />
                 </div>
-                <span className="text-5xl font-bold font-serif text-gray-100 group-hover:text-primary-100 transition-colors">{obj.number}</span>
+                <span className="text-5xl font-bold font-serif text-gray-100 group-hover:text-gray-100 transition-colors">{obj.number}</span>
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-primary-700 transition-colors">{obj.title}</h3>
+              <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-gray-700 transition-colors">{obj.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{obj.description}</p>
             </div>
           ))}
@@ -185,8 +185,8 @@ function InstitutionalSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
           <div>
-            <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-              <div className="w-8 h-px bg-primary-400" />
+            <div className="inline-flex items-center gap-2 text-gray-600 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="w-8 h-px bg-gold-500" />
               Vie institutionnelle
             </div>
             <h2 className="section-title mb-4">Une organisation au service du parti</h2>
@@ -232,8 +232,8 @@ function EmblemSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-              <div className="w-8 h-px bg-primary-400" />
+            <div className="inline-flex items-center gap-2 text-gray-600 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="w-8 h-px bg-gold-500" />
               Symbolique du parti
             </div>
             <h2 className="section-title mb-4">Notre Emblème</h2>
@@ -279,8 +279,8 @@ function StructureSection() {
   const structures = [
     {
       category: 'Organes Nationaux',
-      color: 'border-primary-500',
-      headerColor: 'bg-primary-800',
+      color: 'border-gray-500',
+      headerColor: 'bg-gray-800',
       items: ['Le Congrès', 'Le Collège des Fondateurs', 'Le Bureau Politique', 'Le Directoire National'],
     },
     {
@@ -292,7 +292,7 @@ function StructureSection() {
     {
       category: 'Structures Spécialisées',
       color: 'border-danger-500',
-      headerColor: 'bg-danger-700',
+      headerColor: 'bg-gray-700',
       items: ['La Ligue des Femmes', 'La Ligue des Jeunes', 'La Ligue des Personnes Vivant avec Handicap', 'Le Club de Penseurs', "L'École du Parti"],
     },
   ]
@@ -311,8 +311,8 @@ function StructureSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Organes */}
           <div>
-            <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-              <div className="w-8 h-px bg-primary-400" />
+            <div className="inline-flex items-center gap-2 text-gray-600 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="w-8 h-px bg-gold-500" />
               Organisation interne
             </div>
             <h2 className="section-title mb-6">Organes &amp; Structures</h2>
@@ -323,7 +323,7 @@ function StructureSection() {
                   <ul className="px-5 py-3 space-y-1.5">
                     {s.items.map(item => (
                       <li key={item} className="flex items-center gap-2 text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -336,15 +336,15 @@ function StructureSection() {
           {/* Member categories + Financing */}
           <div className="space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest mb-4">
-                <div className="w-8 h-px bg-primary-400" />
+              <div className="inline-flex items-center gap-2 text-gray-600 text-xs font-bold uppercase tracking-widest mb-4">
+                <div className="w-8 h-px bg-gold-500" />
                 Catégories
               </div>
               <h2 className="section-title mb-4">Types de Membres</h2>
               <div className="space-y-2">
                 {memberCategories.map(m => (
-                  <div key={m.num} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:border-primary-200 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-primary-700 text-white text-sm font-bold flex items-center justify-center shrink-0">
+                  <div key={m.num} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:border-gray-200 transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-gray-800 text-white text-sm font-bold flex items-center justify-center shrink-0">
                       {m.num}
                     </div>
                     <span className="text-gray-800 font-medium text-sm">{m.label}</span>
@@ -353,7 +353,7 @@ function StructureSection() {
               </div>
             </div>
 
-            <div className="bg-primary-900 rounded-2xl p-6 text-white">
+            <div className="bg-gray-900 rounded-2xl p-6 text-white">
               <h3 className="font-serif text-xl font-bold mb-4 text-gold-400">Sources de Financement</h3>
               <div className="grid grid-cols-2 gap-3">
                 {['Cotisations', 'Subventions', 'Legs', 'Dons', 'Revenus propres'].map(source => (
@@ -391,7 +391,7 @@ function JoinConditions() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
           {conditions.map((c, i) => (
             <div key={i} className="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-100">
-              <div className="w-6 h-6 rounded-full bg-primary-700 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-6 h-6 rounded-full bg-gray-800 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                 {i + 1}
               </div>
               <p className="text-gray-700 text-sm leading-relaxed">{c}</p>

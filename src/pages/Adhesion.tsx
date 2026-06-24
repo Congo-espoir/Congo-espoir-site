@@ -55,13 +55,13 @@ function StepIndicator({ current }: { current: number }) {
               current > step.id
                 ? 'bg-success-500 text-white'
                 : current === step.id
-                ? 'bg-primary-700 text-white ring-4 ring-primary-200'
+                ? 'bg-gray-700 text-white ring-4 ring-gray-200'
                 : 'bg-gray-100 text-gray-400'
             }`}>
               {current > step.id ? <CheckCircle size={18} /> : <step.icon size={18} />}
             </div>
             <span className={`text-xs font-medium mt-1.5 hidden sm:block ${
-              current >= step.id ? 'text-primary-700' : 'text-gray-400'
+              current >= step.id ? 'text-gray-700' : 'text-gray-400'
             }`}>{step.label}</span>
           </div>
           {idx < STEPS.length - 1 && (
@@ -103,7 +103,7 @@ function InputField({
           onChange={onChange}
           required={required}
           placeholder={placeholder}
-          className={`w-full px-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all ${
+          className={`w-full px-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all ${
             error ? 'border-danger-400 bg-danger-50' : 'border-gray-200 bg-gray-50 hover:border-gray-300'
           }`}
         />
@@ -144,7 +144,7 @@ function SelectField({
         value={value}
         onChange={onChange}
         required={required}
-        className={`w-full px-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all ${
+        className={`w-full px-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all ${
           error ? 'border-danger-400 bg-danger-50' : 'border-gray-200 bg-gray-50 hover:border-gray-300'
         }`}
       >
@@ -413,14 +413,14 @@ export default function Adhesion() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-gray-50 pt-24 pb-16">
+    <div className="min-h-screen bg-gray-50 pt-24 pb-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             <Shield size={12} />
             Adhésion officielle
           </div>
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-2">
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             Rejoindre Congo Espoir
           </h1>
           <p className="text-gray-500 text-base">
@@ -522,10 +522,10 @@ export default function Adhesion() {
                 onClick={() => fileRef.current?.click()}
                 className={`border-2 border-dashed rounded-lg p-10 text-center cursor-pointer transition-all duration-200 ${
                   dragActive
-                    ? 'border-primary-500 bg-primary-50'
+                    ? 'border-gray-500 bg-gray-50'
                     : file
                     ? 'border-success-400 bg-success-50'
-                    : 'border-gray-300 hover:border-primary-400 hover:bg-primary-50/50'
+                    : 'border-gray-300 hover:border-gray-400 hover:bg-gray-50/50'
                 }`}
               >
                 <input
@@ -558,9 +558,9 @@ export default function Adhesion() {
                 )}
               </div>
 
-              <div className="bg-primary-50 rounded-lg p-4 mt-4 text-sm text-primary-700">
+              <div className="bg-gray-50 rounded-lg p-4 mt-4 text-sm text-gray-700">
                 <p className="font-semibold mb-1 flex items-center gap-2"><Shield size={14} /> Vérification administrative</p>
-                <p className="text-primary-600 text-xs">La pièce d'identité sert uniquement à l'examen de votre demande par les administrateurs habilités.</p>
+                <p className="text-gray-600 text-xs">La pièce d'identité sert uniquement à l'examen de votre demande par les administrateurs habilités.</p>
               </div>
 
               <div className="flex gap-3 mt-8">
@@ -586,7 +586,7 @@ export default function Adhesion() {
                     name="declaration_acceptee"
                     checked={form.declaration_acceptee}
                     onChange={handleChange}
-                    className="mt-1 h-4 w-4 rounded border-gray-300 text-primary-700 focus:ring-primary-500"
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-gray-700 focus:ring-gray-500"
                   />
                   <span className="text-sm text-gray-700 leading-relaxed">
                     Je déclare adhérer librement au Parti Politique Congo Espoir, accepter ses statuts,
@@ -607,14 +607,14 @@ export default function Adhesion() {
                   value={form.cotisation_declaree}
                   onChange={handleChange}
                   placeholder="Ex. 5000 FC, à verser plus tard, ou laisser vide"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                 />
                 <p className="text-gray-400 text-xs mt-1">
                   Aucun montant prédéfini n'est imposé et l'absence de cotisation immédiate ne bloque pas la demande.
                 </p>
               </div>
 
-              <div className="mt-5 bg-primary-50 border border-primary-100 rounded-lg p-4 text-sm text-primary-800">
+              <div className="mt-5 bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-800">
                 <p className="font-semibold mb-2">Résumé du dossier</p>
                 <p>{form.prenom} {form.post_nom} {form.nom}</p>
                 <p>{buildAddress(form)}</p>
@@ -646,8 +646,8 @@ export default function Adhesion() {
               <p className="text-gray-500 text-base mb-6 max-w-sm mx-auto">
                 Votre dossier d'adhésion a été soumis avec succès. Il sera examiné par l'administration du parti.
               </p>
-              <div className="bg-primary-50 rounded-lg p-6 text-left mb-8">
-                <h3 className="font-semibold text-primary-900 mb-3">Prochaines étapes</h3>
+              <div className="bg-gray-50 rounded-lg p-6 text-left mb-8">
+                <h3 className="font-semibold text-gray-900 mb-3">Prochaines étapes</h3>
                 <ol className="space-y-2.5">
                   {[
                     "Vérification de la fiche et de la pièce d'identité",
@@ -655,8 +655,8 @@ export default function Adhesion() {
                     'Notification du statut après validation',
                     'Accueil du nouveau membre au sein de Congo Espoir',
                   ].map((item, i) => (
-                    <li key={item} className="flex items-start gap-3 text-primary-700 text-sm">
-                      <span className="w-5 h-5 rounded-full bg-primary-200 text-primary-800 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                    <li key={item} className="flex items-start gap-3 text-gray-700 text-sm">
+                      <span className="w-5 h-5 rounded-full bg-gray-200 text-gray-800 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                       {item}
                     </li>
                   ))}
@@ -664,7 +664,7 @@ export default function Adhesion() {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link to="/" className="btn-primary py-3.5 px-8 justify-center">Retour à l'accueil</Link>
-                <Link to="/actualites" className="inline-flex items-center justify-center gap-2 border-2 border-primary-200 text-primary-700 font-semibold px-8 py-3.5 rounded-lg hover:border-primary-400 transition-colors">
+                <Link to="/actualites" className="inline-flex items-center justify-center gap-2 border-2 border-gray-200 text-gray-700 font-semibold px-8 py-3.5 rounded-lg hover:border-gray-400 transition-colors">
                   Suivre l'actualité
                 </Link>
               </div>

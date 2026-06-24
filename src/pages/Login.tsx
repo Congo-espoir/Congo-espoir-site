@@ -60,7 +60,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex">
       {/* Left panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 flex-col justify-between p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gray-900 flex-col justify-between p-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold-500" />
           <div className="absolute -bottom-10 -left-10 w-60 h-60 rounded-full bg-danger-500" />
@@ -121,7 +121,7 @@ export default function Login() {
               <button
                 onClick={() => { setMode('signin'); setError(null); setSuccess(null) }}
                 className={`flex-1 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                  mode === 'signin' ? 'bg-white text-primary-800 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  mode === 'signin' ? 'bg-white text-gray-800 shadow-sm' : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
                 <LogIn size={14} className="inline mr-1.5" />
@@ -130,7 +130,7 @@ export default function Login() {
               <button
                 onClick={() => { setMode('signup'); setError(null); setSuccess(null) }}
                 className={`flex-1 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                  mode === 'signup' ? 'bg-white text-primary-800 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  mode === 'signup' ? 'bg-white text-gray-800 shadow-sm' : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
                 <UserPlus size={14} className="inline mr-1.5" />
@@ -161,7 +161,7 @@ export default function Login() {
                   onChange={(e: ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value); setError(null) }}
                   required
                   placeholder="votre@email.com"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                 />
               </div>
               <div>
@@ -173,7 +173,7 @@ export default function Login() {
                     onChange={(e: ChangeEvent<HTMLInputElement>) => { setPassword(e.target.value); setError(null) }}
                     required
                     placeholder="Votre mot de passe"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                   />
                   <button
                     type="button"
@@ -197,7 +197,7 @@ export default function Login() {
 
             <p className="text-center text-gray-400 text-sm mt-6">
               Vous souhaitez rejoindre le parti ?{' '}
-              <Link to="/adhesion" className="text-primary-600 hover:text-primary-800 font-semibold transition-colors">
+              <Link to="/adhesion" className="text-gray-600 hover:text-gray-800 font-semibold transition-colors">
                 Faire une demande d'adhésion
               </Link>
             </p>
