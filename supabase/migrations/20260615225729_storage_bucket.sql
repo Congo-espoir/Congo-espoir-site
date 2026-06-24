@@ -1,0 +1,56 @@
+/*
+# Storage Bucket Setup
+
+Creates a private storage bucket for member identity documents and
+sets up RLS policies so authenticated users can upload their own documents
+and admins can read all documents.
+*/
+
+-- Create the documents bucket (private)
+INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+VALUES (
+  'documents',
+  'documents',
+  false,
+  10485760,
+  ARRAY['image/jpeg', 'image/png', 'image/jpg', 'application/pdf']
+)
+ON CONFLICT (id) DO NOTHING;
+
+-- Allow authenticated users to upload to their own folder
+DROP POLICY IF EXISTS "documents_insert_own" ON storage.objects;
+CREATE POLICY "documents_insert_own" ON storage.objects FOR INSERT
+  TO authenticated
+  WITH CHECK (
+    bucket_id = 'documents' AND
+    (storage.foldername(name))[1] = auth.uid()::text
+  );
+
+-- Allow users to read their own documents
+DROP POLICY IF EXISTS "documents_select_own" ON storage.objects;
+CREATE POLICY "documents_select_own" ON storage.objects FOR SELECT
+  TO authenticated
+  USING (
+    bucket_id = 'documents' AND (
+      (storage.foldername(name))[1] = auth.uid()::text OR
+      EXISTS (SELECT 1 FROM admin_roles WHERE user_id = auth.uid())
+    )
+  );
+
+-- Allow users to delete their own documents
+DROP POLICY IF EXISTS "documents_delete_own" ON storage.objects;
+CREATE POLICY "documents_delete_own" ON storage.objects FOR DELETE
+  TO authenticated
+  USING (
+    bucket_id = 'documents' AND
+    (storage.foldername(name))[1] = auth.uid()::text
+  );
+
+-- Allow users to update their own documents
+DROP POLICY IF EXISTS "documents_update_own" ON storage.objects;
+CREATE POLICY "documents_update_own" ON storage.objects FOR UPDATE
+  TO authenticated
+  USING (
+    bucket_id = 'documents' AND
+    (storage.foldername(name))[1] = auth.uid()::text
+  );
